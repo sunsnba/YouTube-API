@@ -8,7 +8,7 @@ class Header extends React.Component {
     return (
       <div>
       <h1>YouTube API</h1>
-      <button>Search</button>
+
       </div>
     )
   }    

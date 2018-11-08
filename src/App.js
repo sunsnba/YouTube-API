@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Components/Header';
+import VideoForm from './Components/VideoForm';
 import './App.css';
 
 class App extends Component {
@@ -10,6 +11,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header/>
+        <VideoForm />
         <header className="App-header">
           <p>
             Edit <code>src/App.js</code> and save to reload.

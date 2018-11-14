@@ -1,18 +1,21 @@
 import React from 'react';
 
-class Player extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-  render(props) {
+
+  const Player = ({video}) => {
+    
+    if(!video) {return <h1> Loading...</h1>}
+
+    const videoId = video.id.videoId
+    const url = 'https://www.youtube.com/embed/'+ videoId;
+
+
     return (
-      <div>
-     <iframe id="ytplayer" type="text/html" width="640" height="360" 
-  src="https://www.youtube.com/embed/OiTCDijrze8"
-  frameborder="0"></iframe>
-      </div>
+     <div>
+       <iframe src={url} > </iframe>
+       <div>{video.snippet.title}</div>
+       <div>{video.snippet.description}</div>
+     </div>
     )
   }    
-}
 
 export default Player;

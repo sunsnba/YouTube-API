@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class VideoForm extends React.Component {
+class VideoForm extends Component {
     constructor(props) {
         super(props)
         this.state = {vidName: ''};

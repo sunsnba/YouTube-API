@@ -25,6 +25,7 @@ class VideoForm extends Component {
         onSubmit(event) {
             console.log('on submit working')
             event.preventDefault();
+            this.setState({term: ''})
         }
 }
 

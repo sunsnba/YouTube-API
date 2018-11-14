@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 class VideoForm extends Component {
     constructor(props) {
         super(props)
-        this.state = {vidName: ''};
+        this.state = {term: ''};
     }
 
 
@@ -11,15 +11,16 @@ class VideoForm extends Component {
         return (
             //anything that affects the form should be an input tag
             <form onSubmit={event => this.onSubmit(event)}>
-            <input type="text" value={this.state.vidName} onChange={event => this.onInputChange(event.target.value)} />
+            <input type="text" value={this.state.term} onChange={event => this.onInputChange(event.target.value)} />
              <input type="submit" />
            </form>
             
         )
     }
 
-        onInputChange(vidName) {
-            this.setState({vidName})
+        onInputChange(term) {
+            this.setState({term})
+            this.props.onSearchChange(term)
     }
         onSubmit(event) {
             console.log('on submit working')

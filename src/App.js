@@ -10,7 +10,7 @@ class App extends Component {
   constructor(props) {
     super(props)
 
-    this.state = {videos: [], videoSelected: null}
+    this.state = {videos: [], selectedVideo: null}
     this.videoSearch('kanye')
   }
 
@@ -25,9 +25,9 @@ videoSearch (term) {
     return (
       <div className="App">
       <h1>Youtube API Test</h1>
-        <VideoForm />
-        <Player />
-        <VideoList />
+        <VideoForm onSearchChange={term => this.videoSearch(term)}/>
+        <Player video={this.state.selectedVideo}/>
+        <VideoList onSelectedVideo={selectedVideo=>this.setState({selectedVideo})} videos={this.state.videos} />
 
       </div>
     );

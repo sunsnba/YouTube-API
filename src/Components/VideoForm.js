@@ -1,34 +1,30 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 class VideoForm extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {value: ''};
-
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.state = {vidName: ''};
     }
 
-    handleChange(event) {
-        this.setState({value: event.target.value})
-    }
-
-    handleSubmit(event) {
-        alert('a video search was submitted: ' + this.state.value);
-        event.preventDefault();
-    }
 
     render () {
         return (
-            <form onSubmit={this.handleSubmit}>
-              <label>
-                  Video Search:  
-                  <input type="text" value={this.state.value} onChange={this.handleChange} />
-              </label>
-              <input type="submit" value="Submit" />
-            </form>
+            //anything that affects the form should be an input tag
+            <form onSubmit={event => this.onSubmit(event)}>
+            <input type="text" value={this.state.vidName} onChange={event => this.onInputChange(event.target.value)} />
+             <input type="submit" />
+           </form>
+            
         )
     }
+
+        onInputChange(vidName) {
+            this.setState({vidName})
+    }
+        onSubmit(event) {
+            console.log('on submit working')
+            event.preventDefault();
+        }
 }
 
 export default VideoForm;

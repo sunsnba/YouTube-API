@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import '../style.css'
 
 class VideoForm extends Component {
     constructor(props) {
@@ -10,7 +11,7 @@ class VideoForm extends Component {
     render () {
         return (
             //anything that affects the form should be an input tag
-            <form onSubmit={event => this.onSubmit(event)}>
+            <form className="search-bar" onSubmit={event => this.onSubmit(event)}>
             <input type="text" value={this.state.term} onChange={event => this.onInputChange(event.target.value)} />
              <input type="submit" />
            </form>

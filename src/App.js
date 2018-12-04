@@ -3,6 +3,7 @@ import VideoForm from './Components/VideoForm';
 import Player from './Components/Player';
 import YTSearch from 'youtube-api-search';
 import VideoList from './Components/Video_List';
+import './App.css';
 
 const API_KEY = 'AIzaSyAtaP3I7LAK-M5imwVcQUOh3c5-9sofvFk'
 
@@ -24,11 +25,12 @@ videoSearch (term) {
   render() {
     return (
       <div className="App">
-      <h1>Youtube API Test</h1>
+      <h1 className="App-header">Youtube API Test</h1>
         <VideoForm onSearchChange={term => this.videoSearch(term)}/>
         <Player video={this.state.selectedVideo}/>
+        <div className="absolute">
         <VideoList onSelectedVideo={selectedVideo=>this.setState({selectedVideo})} videos={this.state.videos} />
-
+        </div>
       </div>
     );
   }
